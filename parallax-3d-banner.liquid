@@ -1,0 +1,296 @@
+<!-- Shopify Horizon Theme - Premium 3D Parallax Banner Section -->
+<!-- Perfect for Phone Cases, Smart Watch Cases, Vlog Accessories -->
+
+{% stylesheet %}
+  .parallax-3d-banner {
+    position: relative;
+    overflow: hidden;
+    min-height: 580px;
+    background: linear-gradient(135deg, #0b1020 0%, #151d34 40%, #1d2c4d 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1400px;
+    isolation: isolate;
+    margin: 0;
+    padding: 0;
+  }
+
+  .parallax-3d-banner__background {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(92, 127, 255, 0.35), transparent 25%),
+      radial-gradient(circle at 80% 30%, rgba(69, 215, 255, 0.22), transparent 30%),
+      linear-gradient(120deg, rgba(255,255,255,0.04), rgba(255,255,255,0));
+    transform: scale(1.08);
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 0;
+  }
+
+  .parallax-3d-banner__inner {
+    position: relative;
+    z-index: 1;
+    width: min(1200px, calc(100% - 48px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 1.3fr;
+    align-items: center;
+    gap: 48px;
+    padding: 80px 24px;
+  }
+
+  .parallax-3d-banner__product-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  .parallax-3d-banner__product {
+    width: min(420px, 85%);
+    max-width: 420px;
+    height: auto;
+    filter: drop-shadow(0 50px 50px rgba(0, 0, 0, 0.5));
+    transform: rotateY(0deg) rotateX(0deg) translateZ(30px);
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 16px;
+  }
+
+  .parallax-3d-banner__content {
+    color: #fff;
+  }
+
+  .parallax-3d-banner__eyebrow {
+    margin: 0 0 14px;
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #89d7ff;
+    font-weight: 700;
+  }
+
+  .parallax-3d-banner__content h2 {
+    margin: 0 0 20px;
+    font-size: clamp(2.2rem, 4vw, 4.5rem);
+    line-height: 0.96;
+    letter-spacing: -0.05em;
+    font-weight: 800;
+    color: #ffffff;
+  }
+
+  .parallax-3d-banner__content p {
+    margin: 0 0 20px;
+    font-size: 1.08rem;
+    line-height: 1.7;
+    max-width: 560px;
+    color: rgba(255, 255, 255, 0.82);
+  }
+
+  .parallax-3d-banner__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .parallax-3d-banner__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 12px 32px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .parallax-3d-banner__btn:hover {
+    transform: translateY(-4px);
+  }
+
+  .parallax-3d-banner__btn-primary {
+    background: linear-gradient(135deg, #6fe3ff 0%, #62b6ff 100%);
+    color: #0c1220;
+    box-shadow: 0 20px 40px rgba(97, 182, 255, 0.4);
+  }
+
+  .parallax-3d-banner__btn-primary:hover {
+    box-shadow: 0 28px 56px rgba(97, 182, 255, 0.5);
+  }
+
+  .parallax-3d-banner__btn-secondary {
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    border: 1.5px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(8px);
+  }
+
+  .parallax-3d-banner__btn-secondary:hover {
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.35);
+  }
+
+  @media screen and (max-width: 1024px) {
+    .parallax-3d-banner__inner {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      padding: 60px 24px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .parallax-3d-banner {
+      min-height: 480px;
+    }
+
+    .parallax-3d-banner__inner {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 24px;
+      padding: 48px 16px;
+    }
+
+    .parallax-3d-banner__product {
+      width: min(300px, 80%);
+    }
+
+    .parallax-3d-banner__content h2 {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      margin-bottom: 16px;
+    }
+
+    .parallax-3d-banner__content p {
+      font-size: 0.95rem;
+      margin: 0 auto 16px;
+    }
+
+    .parallax-3d-banner__actions {
+      justify-content: center;
+    }
+
+    .parallax-3d-banner__btn {
+      min-height: 48px;
+      padding: 10px 24px;
+      font-size: 0.95rem;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .parallax-3d-banner {
+      min-height: 420px;
+    }
+
+    .parallax-3d-banner__inner {
+      padding: 40px 12px;
+      gap: 20px;
+    }
+
+    .parallax-3d-banner__content h2 {
+      font-size: 1.6rem;
+    }
+
+    .parallax-3d-banner__actions {
+      flex-direction: column;
+    }
+
+    .parallax-3d-banner__btn {
+      width: 100%;
+    }
+  }
+{% endstylesheet %}
+
+<div class="parallax-3d-banner" id="parallax-banner">
+  <div class="parallax-3d-banner__background" id="parallax-bg"></div>
+
+  <div class="parallax-3d-banner__inner">
+    <div class="parallax-3d-banner__product-wrap">
+      <img
+        src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500&h=500&fit=crop"
+        alt="Premium Tech Accessories - Phone Cases & Smart Watch Covers"
+        class="parallax-3d-banner__product"
+        id="parallax-product"
+      />
+    </div>
+
+    <div class="parallax-3d-banner__content">
+      <p class="parallax-3d-banner__eyebrow">✨ NEW COLLECTION 2025</p>
+      <h2>Protect Your Everyday Tech in Style</h2>
+      <p>
+        Premium phone cases, smart watch covers, and professional vlog accessories designed for durability, style, and everyday excellence. Elevate your tech game with our curated collection.
+      </p>
+
+      <div class="parallax-3d-banner__actions">
+        <a href="/collections/phone-cases" class="parallax-3d-banner__btn parallax-3d-banner__btn-primary">
+          Shop Phone Cases
+        </a>
+        <a href="/collections/all" class="parallax-3d-banner__btn parallax-3d-banner__btn-secondary">
+          View All Products
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% javascript %}
+  document.addEventListener('DOMContentLoaded', function () {
+    const banner = document.getElementById('parallax-banner');
+    if (!banner) return;
+
+    const background = document.getElementById('parallax-bg');
+    const product = document.getElementById('parallax-product');
+
+    if (!background || !product) return;
+
+    // Check if device supports hover (not touch device)
+    const isTouchDevice = () => {
+      return (
+        (typeof window !== 'undefined' &&
+          ('ontouchstart' in window ||
+            (typeof navigator !== 'undefined' &&
+              navigator.maxTouchPoints > 0 ||
+              navigator.msMaxTouchPoints > 0)))
+      );
+    };
+
+    if (!isTouchDevice()) {
+      banner.addEventListener('mousemove', function (event) {
+        const rect = banner.getBoundingClientRect();
+        if (rect.top > window.innerHeight || rect.bottom < 0) return; // Check if banner is in viewport
+
+        const x = (event.clientX - rect.left) / rect.width;
+        const y = (event.clientY - rect.top) / rect.height;
+
+        const moveX = (x - 0.5) * 40;
+        const moveY = (y - 0.5) * 40;
+
+        const rotateY = (x - 0.5) * 32;
+        const rotateX = -(y - 0.5) * 24;
+
+        background.style.transform = `scale(1.12) translate(${moveX}px, ${moveY}px)`;
+        product.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg) translateZ(30px)`;
+      });
+
+      banner.addEventListener('mouseleave', function () {
+        background.style.transform = 'scale(1.08) translate(0, 0)';
+        product.style.transform = 'rotateY(0deg) rotateX(0deg) translateZ(30px)';
+      });
+    } else {
+      // Scroll parallax for mobile devices
+      window.addEventListener('scroll', function () {
+        const rect = banner.getBoundingClientRect();
+        const scrollPercent = (window.innerHeight - rect.top) / window.innerHeight;
+
+        if (scrollPercent > 0 && scrollPercent < 1) {
+          const moveX = scrollPercent * 30;
+          background.style.transform = `scale(1.12) translateY(${-moveX}px)`;
+        }
+      });
+    }
+  });
+{% endjavascript %}
